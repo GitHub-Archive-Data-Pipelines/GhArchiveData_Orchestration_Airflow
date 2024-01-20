@@ -1,0 +1,22 @@
+{
+  "gh-archive-data-raw-lambda": {
+    "conn_type": "http",
+    "description": "",
+    "login": "",
+    "password": null,
+    "host": "http://172.21.0.9",
+    "port": 8080,
+    "schema": "",
+    "extra": "{}"
+  },
+  "gh-archive-data-raw-s3": {
+    "conn_type": "aws",
+    "description": "",
+    "login": "root",
+    "password": "password",
+    "host": "",
+    "port": null,
+    "schema": "",
+    "extra": "{\"aws_access_key_id\": \"root\", \"aws_secret_access_key\": \"password\", \"endpoint_url\": \"http://minio:9000\"}"
+  }
+}
