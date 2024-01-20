@@ -19,6 +19,8 @@ default_args = {
     "retry_delay": timedelta(minutes=5),
 }
 
+DATE = "{{ ds }}"
+HOUR = "{{ dag_run.logical_date.strftime('%H') }}"
 
 # Initialize the DAG
 with DAG(
@@ -35,7 +37,7 @@ with DAG(
     extract_data = SimpleHttpOperator(
         task_id="extract_data",
         endpoint="2015-03-31/functions/function/invocations",
-        data=json.dumps({"date": "2023-01-01", "hour": "04"}),
+        data=json.dumps({"date": DATE, "hour": HOUR}),
         headers={"Content-Type": "application/json"},
         dag=dag,
         http_conn_id="gh-archive-data-raw-lambda",
